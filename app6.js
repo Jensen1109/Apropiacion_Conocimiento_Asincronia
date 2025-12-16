@@ -7,6 +7,25 @@
 const promesa = new Promise ((resolve,reject) =>
 {
     setTimeout(() => {
-        
+        const numero = Math.random()
+        if(numero>0.5)
+        {
+            resolve("El proceso fue exitoso")
+        }else
+        {
+            reject("El proceso fallo")
+        }
     },1200);
 });
+
+promesa
+    .then(  (mensaje) =>
+    {
+        console.log(mensaje);
+        
+    })
+    .catch((error) =>
+    {
+        console.log(error);
+        
+    })
